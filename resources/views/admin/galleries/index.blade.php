@@ -26,6 +26,8 @@
                         <tr>
                             <td>
                                 @if($gallery->image_url)
+                                    <img src="{{ Storage::url($gallery->image_url) }}" alt="{{ $gallery->caption }}" class="table-thumb">
+                                @elseif($gallery->image_path)
                                     <img src="{{ Storage::url($gallery->image_path) }}" alt="{{ $gallery->caption }}" class="table-thumb">
                                 @else
                                     <span class="badge bg-secondary">No Image</span>
