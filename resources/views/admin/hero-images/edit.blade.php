@@ -61,7 +61,7 @@
         <div class="col-lg-4">
             <div class="detail-panel">
                 <h6 class="mb-3">Preview Gambar</h6>
-                <img src="{{ $heroImage->image_src }}" alt="{{ $heroImage->title ?? 'Hero image' }}" class="img-fluid rounded mb-3" style="max-height: 260px; width: 100%; object-fit: cover;">
+<img src="{{ Storage::url($heroImage->image_path) }}" alt="{{ $heroImage->title ?? 'Hero image' }}" class="img-fluid rounded mb-3" style="max-height: 260px; width: 100%; object-fit: cover;">
 
                 <dl class="detail-list">
                     <dt>Judul</dt>

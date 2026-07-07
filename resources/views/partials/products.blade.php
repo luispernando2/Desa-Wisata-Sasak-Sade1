@@ -43,7 +43,7 @@
 
                                     <img
                                         src="{{ isset($product->image_path) && $product->image_path
-                                            ? asset('storage/' . $product->image_path)
+                                            ? Storage::url($product->image_path)
                                             : (isset($product->image_url) && $product->image_url ? $product->image_url : 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80') }}"
                                         alt="{{ $product->name }}"
                                     >
@@ -153,7 +153,7 @@
 
                                     <img
                                         src="{{ isset($product->image_path) && $product->image_path
-                                            ? asset('storage/' . $product->image_path)
+                                            ? Storage::url($product->image_path)
                                             : (isset($product->image_url) && $product->image_url ? $product->image_url : 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80') }}"
                                         alt="{{ $product->name }}"
                                     >
