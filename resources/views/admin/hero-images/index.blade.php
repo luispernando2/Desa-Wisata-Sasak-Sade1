@@ -31,7 +31,7 @@
                     @forelse($heroImages as $heroImage)
                         <tr>
                             <td>
-                                <img src="{{ $heroImage->image_src }}" alt="{{ $heroImage->title ?? 'Hero image' }}" class="table-thumb">
+                                <img src="{{ Storage::url($heroImage->image_path) }}" alt="{{ $heroImage->title ?? 'Hero image' }}" class="table-thumb">
                             </td>
                             <td>
                                 <strong>{{ $heroImage->title ?: 'Tanpa judul' }}</strong>

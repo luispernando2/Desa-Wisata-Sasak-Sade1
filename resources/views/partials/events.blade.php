@@ -37,9 +37,11 @@
 
                         @if($event->image_path)
 
-                            <img src="{{ asset('storage/' . $event->image_path) }}"
+                            <img src="{{ Storage::url($event->image_path) }}"
                                  alt="{{ $event->name }}"
                                  class="event-image">
+
+
 
                         @else
 

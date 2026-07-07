@@ -43,7 +43,7 @@
                                 @if($gallery->image_url)
 
                                     <img
-                                        src="{{ $gallery->image_url }}"
+                                        src="{{ Storage::url($gallery->image_path) }}"
                                         alt="{{ $gallery->caption }}"
                                         class="rounded-3 border"
                                         style="
