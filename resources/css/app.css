@@ -1,0 +1,254 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    color-scheme: dark;
+    color: #1B1B18;
+
+    /* Sasak Sade palette */
+    --sade-gold: #E8C07D;
+    --sade-brown: #4A2B1A;
+    --sade-teal: #0E3A37;
+    --sade-accent: #F53003;
+}
+
+/* Make Bootstrap "success" map to Sasak Sade theme */
+.btn-success,
+.bg-success,
+.text-success {
+    /* keep specificity */
+}
+
+.btn-success {
+    background-color: var(--sade-gold) !important;
+    border-color: var(--sade-gold) !important;
+    color: var(--sade-brown) !important;
+}
+.btn-success:hover {
+    background-color: #f5d296 !important;
+    border-color: #f5d296 !important;
+    color: #3d2417 !important;
+}
+
+.btn-outline-success {
+    color: var(--sade-gold) !important;
+    border-color: var(--sade-gold) !important;
+}
+.btn-outline-success:hover {
+    background-color: var(--sade-gold) !important;
+    border-color: var(--sade-gold) !important;
+    color: var(--sade-brown) !important;
+}
+
+.text-success {
+    color: var(--sade-gold) !important;
+}
+
+.bg-success {
+    background-color: var(--sade-gold) !important;
+}
+
+.border-success {
+    border-color: var(--sade-gold) !important;
+}
+
+/* NAVBAR: match footer gold + ensure visibility */
+.navbar-nav .nav-link {
+    color: var(--sade-gold) !important;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--sade-brown) !important;
+}
+
+/* Toggler icon (hamburger) visibility */
+.navbar-light .navbar-toggler {
+    border-color: rgba(0,0,0,0.12);
+}
+
+.navbar-light .navbar-toggler-icon {
+    filter: invert(43%) sepia(89%) saturate(833%) hue-rotate(356deg) brightness(95%) contrast(98%);
+}
+
+
+
+body {
+    font-family: var(--font-sans);
+    background-image: radial-gradient(circle at top left, rgba(245, 48, 3, 0.15), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(248, 184, 3, 0.12), transparent 35%);
+}
+
+/* Discover section (hero/sections) */
+#gallery, #packages, #events, #reviews, #booking, #about, #contact {
+    position: relative;
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, var(--sade-teal) 0%, #0b2f2d 60%, #08242d 100%);
+}
+
+/* cards tone */
+.card.shadow-soft {
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card.shadow-soft:hover,
+.card.shadow-soft:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 70px rgba(0,0,0,0.10) !important;
+}
+
+/* gallery parallax-ish float */
+#gallery img {
+    transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #gallery .card img {
+        animation: floatImg 6s ease-in-out infinite;
+    }
+
+    @keyframes floatImg {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+}
+
+
+section {
+    scroll-margin-top: 6rem;
+}
+
+::selection {
+    background-color: #F53003;
+    color: #ffffff;
+}
+
+button,
+input,
+select,
+textarea {
+    transition: all 0.2s ease;
+}
+
+/* ===================================================== */
+/* Floating WhatsApp */
+/* ===================================================== */
+.floating-wa{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99999;
+
+    width: 58px;
+    height: 58px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(48, 186, 93, 0.98);
+    border-radius: 50%;
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.25),
+        0 0 0 6px rgba(48, 186, 93, 0.18);
+
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* gerak pelan sendiri */
+@media (prefers-reduced-motion: no-preference) {
+    .floating-wa {
+        animation: waFloat 2.8s ease-in-out infinite;
+    }
+
+    @keyframes waFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+}
+
+.floating-wa:hover{
+    transform: translateY(-3px);
+    background: rgba(35, 167, 80, 0.98);
+    box-shadow:
+        0 16px 40px rgba(0,0,0,0.28),
+        0 0 0 8px rgba(48, 186, 93, 0.20);
+}
+
+.floating-wa__img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+/* bubble teks */
+.floating-wa__bubble{
+    position: absolute;
+    right: 66px;
+    bottom: 12px;
+
+    max-width: 220px;
+
+    background: rgba(255,255,255,0.92);
+    color: #111;
+
+    padding: 10px 12px;
+    border-radius: 16px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+
+    font-weight: 700;
+    font-size: 13px;
+
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.floating-wa:hover .floating-wa__bubble,
+.floating-wa:focus .floating-wa__bubble{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.floating-wa__bubble:after{
+    content: '';
+    position: absolute;
+    right: -8px;
+    bottom: 10px;
+    border-width: 8px 0 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(255,255,255,0.92);
+}
+
+@media (max-width: 576px){
+    .floating-wa{
+        right: 14px;
+        bottom: 14px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .floating-wa__bubble{
+        right: 62px;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+

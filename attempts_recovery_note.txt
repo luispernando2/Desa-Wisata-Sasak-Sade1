@@ -1,0 +1,2 @@
+Recovery note: HomepageContentController.php got corrupted by repeated edits; need full rewrite from initial known-good content, then implement previewDashboard route/view.
+
