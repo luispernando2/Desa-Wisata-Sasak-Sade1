@@ -33,8 +33,8 @@
         <div class="col-lg-4">
             <div class="detail-panel">
                 <h6 class="mb-3">Preview Gambar</h6>
-                @if($gallery->image_url)
-                    <img src="{{ $gallery->image_url }}" alt="Galeri {{ $gallery->caption }}" class="img-fluid rounded mb-3" style="max-height: 240px; width: 100%; object-fit: cover;">
+                @if($gallery->image_url || $gallery->image_path)
+                    <img src="{{ Storage::url($gallery->image_path) }}" alt="Galeri {{ $gallery->caption }}" class="img-fluid rounded mb-3" style="max-height: 240px; width: 100%; object-fit: cover;">
                 @endif
                 <dl class="detail-list">
                     <dt>Keterangan</dt>
