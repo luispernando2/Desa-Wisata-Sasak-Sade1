@@ -15,7 +15,7 @@
                     <div class="card rounded-4 shadow-soft overflow-hidden border-0 h-100 gallery-card">
                         <div class="gallery-media">
                             <img
-                                src="{{ $item->image_url ?? (isset($item->image_path) && $item->image_path ? Storage::url($item->image_path) : asset('images/sade1.png')) }}"
+                                src="{{ $item->image_url ? Storage::url($item->image_url) : ((isset($item->image_path) && $item->image_path) ? Storage::url($item->image_path) : asset('images/sade1.png')) }}"
                                 alt="{{ $item->caption }}"
                                 class="card-img-top"
                                 style="height:260px; object-fit:cover;"
