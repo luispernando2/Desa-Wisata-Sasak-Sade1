@@ -1,6 +1,6 @@
 @php
-    $waNumber = '082145903035';
-    $waLink = 'https://wa.me/6282145903035';
+    $waNumber = '087865936972';
+    $waLink = 'https://wa.me/6287865936972';
 @endphp
 
 <a href="{{ $waLink }}"
