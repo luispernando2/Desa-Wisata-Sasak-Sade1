@@ -75,7 +75,7 @@
                     </div>
 
                     <!-- CTA -->
-                    <a href="https://wa.me/6287865936972?text={{ rawurlencode('Halo Admin Sasak Sade, saya ingin booking paket wisata.') }}"
+                    <a href="https://wa.me/6282339886647?text={{ rawurlencode('Halo Admin Sasak Sade, saya ingin booking paket wisata.') }}"
     target="_blank"
     class="booking-wa-btn mt-5">
 
